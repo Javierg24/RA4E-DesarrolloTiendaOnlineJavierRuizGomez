@@ -1,0 +1,40 @@
+{
+    "categorias": [
+      {
+        "id_categoria": 1,
+        "nombre": "Camisetas"
+      },
+      {
+        "id_categoria": 2,
+        "nombre": "Pantalones"
+      },
+      {
+        "id_categoria": 3,
+        "nombre": "Zapatos"
+      }
+    ],
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Camiseta Básica",
+        "precio": 15.99,
+        "destacado": true,
+        "id_categoria": 1
+      },
+      {
+        "id": 2,
+        "nombre": "Pantalón Casual",
+        "precio": 25.99,
+        "destacado": false,
+        "id_categoria": 2
+      },
+      {
+        "id": 3,
+        "nombre": "Zapatos Deportivos",
+        "precio": 45.99,
+        "destacado": true,
+        "id_categoria": 3
+      }
+    ]
+  }
+  

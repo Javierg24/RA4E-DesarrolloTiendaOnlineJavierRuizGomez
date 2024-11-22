@@ -21,11 +21,11 @@
 
 <body>
 
-    <body class="bg-light">
+    <body class="bg-light">        
         <div class="container d-flex justify-content-center align-items-center vh-100">
             <div class="card p-4 shadow-lg" style="width: 350px;">
                 <h3 class="titulo">Inicio Sesión</h3>
-                <form onsubmit="login(event)">
+                <form onsubmit="login(event)" action="../php/login.php" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Nombre de usuario</label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Introduce tu usuario"  required>
@@ -39,8 +39,24 @@
                 </form>
             </div>
         </div>
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 LongWay. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#">Política de privacidad</a> | <a href="#">Términos y condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
 
         <script src="../js/login.js"></script>
     </body>
 
+    
 </html>
