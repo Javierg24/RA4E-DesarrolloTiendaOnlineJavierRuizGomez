@@ -1,0 +1,65 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+.titulo{
+    text-align: center;
+    color: #2c3e51;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.card {
+    border-radius: 10px;
+    border: none;
+}
+
+.boton {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #007bff; /* Color azul primario */
+    color: #ffffff; /* Texto blanco */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+    transform: scale(1.02); /* Efecto de ligera ampliación */
+}
+
+.boton:active {
+    background-color: #003d80; /* Color aún más oscuro al hacer clic */
+    transform: scale(0.98); /* Efecto de compresión al hacer clic */
+}
+
+.boton:focus {
+    outline: none; /* Elimina el borde de enfoque por defecto */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.75); /* Sombra azul alrededor */
+}
+
+.form-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(70, 76, 82, 0.5);
+}
+
+a.text-primary {
+    text-decoration: none;
+}
+
+a.text-primary:hover {
+    text-decoration: underline;
+}
