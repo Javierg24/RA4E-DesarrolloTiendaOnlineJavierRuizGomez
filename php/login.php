@@ -36,7 +36,9 @@ function login($username, $password) {
                 'token' => $token,
                 'infoTienda' => $infoTienda
             ]);
+
             exit;
+            
         } else {
             // Si las credenciales son incorrectas
             http_response_code(401);  // Unauthorized

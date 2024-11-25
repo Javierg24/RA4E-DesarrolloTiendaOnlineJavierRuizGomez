@@ -1,173 +1,387 @@
-/* Estilos Generales */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f7f7f7;
+    line-height: 1.6;
+}
+
+/* Animaciones */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Mueve el elemento hacia abajo ligeramente */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Devuelve el elemento a su posición original */
+    }
+}
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(100px); /* Mueve el elemento hacia abajo ligeramente */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Devuelve el elemento a su posición original */
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.5);  /* Comienza pequeño (50% del tamaño original) */
+        opacity: 0; /* Inicialmente invisible */
+    }
+    to {
+        transform: scale(1);  /* Aumenta al tamaño original */
+        opacity: 1;  /* Hace el elemento completamente visible */
+    }
+}
+
 
 /* Navbar */
 .navbar {
-    background-color: #343a40;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar a {
-    color: #f8f9fa;
+.navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    width: 180px;
+    height: 100px;
+}
+
+.navbar__menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar__list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar__link {
     text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
 }
 
-.navbar .navbar-toggler-icon {
-    background-color: #f8f9fa;
+.navbar__link:hover {
+    color: #000;
 }
 
-.navbar-brand img {
-    max-width: 100px;
-}
-
-.navbar-nav .nav-item .nav-link {
-    padding: 0.8rem 1.2rem;
-    font-size: 1.1rem;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    background-color: #495057;
-    border-radius: 5px;
+.navbar__toggle {
+    display: none;
 }
 
 /* Main Content */
 .main-content {
-    padding: 80px 15px 30px;  /* Añadimos suficiente espacio arriba para el navbar fijo */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;  /* Espacio para la navbar fija */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
 }
 
-.main-content h1 {
+/* Aplica la animación al título */
+.main-content__title {
     font-size: 2.5rem;
-    color: #343a40;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Aplica la animación a la descripción */
+.main-content__description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s; /* Retrasa la animación para que comience después del título */
+}
+
+/* Categorías */
+.categories {
+    margin-top: 1rem;
+    text-align: left;
+    
+}
+
+.categories__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.categories__list {
+    display: flex;
+    flex-direction: column;
+    animation: appear 1s ease-out forwards;
+    gap: 0.5rem;
+    margin-bottom: 2%;
+}
+
+.categories__list li {
+    padding: 0.5rem 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.categories__list li:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+/* Estilo de la cuadrícula de productos */
+.featured-products__grid > .card {
+    opacity: 0; /* Inicialmente invisible */
+    animation: scaleIn 0.5s ease-out forwards;
+    background-color: #fff;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Asegura que la imagen no sobresalga de los bordes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave en hover */
+}
+
+/* Aplica animación a cada producto con retraso escalonado para el efecto */
+.featured-products__grid > .card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.featured-products__grid > .card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.featured-products__grid > .card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.featured-products__grid > .card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+/* Efecto hover: aumento y sombra */
+.featured-products__grid > .card:hover {
+    transform: translateY(-10px); /* Desplaza la tarjeta hacia arriba */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Aumenta la sombra para dar un efecto de elevación */
+}
+
+/* Estilos de la imagen del producto */
+.featured-products__grid > .card img {
+    width: 100%; /* Asegura que la imagen ocupe todo el espacio */
+    height: auto;
+    object-fit: cover; /* Mantiene la proporción y recorta la imagen si es necesario */
+}
+
+/* Estilos del contenido dentro de la tarjeta */
+.featured-products__grid > .card .card-body {
+    padding: 1rem; /* Añadir algo de espacio dentro de la tarjeta */
+    text-align: center; /* Centra el texto */
+}
+
+/* Título del producto */
+.featured-products__grid > .card .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Descripción y precio del producto */
+.featured-products__grid > .card .card-text {
+    font-size: 1rem;
+    color: #777;
     margin-bottom: 1rem;
 }
 
-.main-content p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 2rem;
-}
-
-/* Categorías y Productos */
-.row {
-    margin-top: 30px;
-}
-
-.list-group-item {
-    background-color: #fff;
-    color: #495057;
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    font-size: 1.1rem;
+/* Botón "Añadir al carrito" */
+.featured-products__grid > .card .btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.list-group-item:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
+/* Hover del botón */
+.featured-products__grid > .card .btn:hover {
+    background-color: #444;
 }
 
-.card {
-    margin-bottom: 30px;
+.featured-products {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+}
+
+.featured-products__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.featured-products__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.card:hover {
+/* Efecto hover en la tarjeta */
+.product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.card-img-top {
+/* Estilos de la imagen del producto */
+.product-card__image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
-.card-body {
-    padding: 20px;
+/* Información del producto (título, precio, etc.) */
+.product-card__info {
+    padding: 1rem;
+    text-align: center;
 }
 
-.card-title {
-    font-size: 1.25rem;
+/* Título del producto */
+.product-card__title {
+    font-size: 1.2rem;
     font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #000;
 }
 
-.card-text {
-    font-size: 1.1rem;
-    color: #6c757d;
+/* Precio del producto */
+.product-card__price {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 1rem;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border: none;
-    padding: 10px 20px;
+/* Botón de añadir al carrito */
+.product-card__button {
+    padding: 0.5rem 1rem;
+    background-color: #000;
     color: #fff;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+/* Efecto hover en el botón */
+.product-card__button:hover {
+    background-color: #333;
 }
 
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 1.33rem); /* Dos productos por fila */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%; /* Un producto por fila */
+    }
+}
 /* Footer */
 .footer {
-    background-color: #343a40;
+    background-color: #000;
     color: #fff;
-    padding: 20px 0;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     text-align: center;
+}
+
+.footer__text {
     font-size: 0.9rem;
 }
 
-.footer a {
-    color: #f8f9fa;
+.footer__links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer__link {
     text-decoration: none;
-    margin: 0 10px;
+    color: #ccc;
+    transition: color 0.3s ease-in-out;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+.footer__link:hover {
+    color: #fff;
 }
 
-/* Responsive Design */
+.footer__separator {
+    color: #666;
+}
+
+/* Responsiveness */
 @media (max-width: 768px) {
-    .navbar-nav .nav-item .nav-link {
-        font-size: 1rem;
-        padding: 0.6rem 1rem;
-    }
-
-    .main-content {
-        padding: 60px 15px;
-    }
-
-    .card {
-        margin-bottom: 20px;
-    }
-
-    .row {
-        margin-top: 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    .main-content h1 {
-        font-size: 2rem;
-    }
-
-    .main-content p {
-        font-size: 1rem;
+    .categories__list,
+    .featured-products__grid {
+        flex-direction: column;
     }
 }

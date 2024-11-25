@@ -1,120 +1,143 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f9fc;
-    color: #333;
-}
-
-.titulo{
-    text-align: center;
-    color: #2c3e51;
-    margin-bottom: 5%;
-    margin-top: 2%;
-}
-
-.card {
-    border-radius: 10px;
-    border: none;
-}
-
-.boton {
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    background-color: #424549; /* Color azul primario */
-    color: #ffffff; /* Texto blanco */
     font-size: 16px;
+    color: #333;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Logo */
+.page__login::before {
+    content: "LongWay";
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2rem;
     font-weight: bold;
+    letter-spacing: 0.1rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #000;
+}
+
+/* Login Container */
+.login {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    cursor: pointer;
 }
 
-.boton:hover {
-    background-color: #646668; /* Color más oscuro al pasar el ratón */
-    transform: scale(1.02); /* Efecto de ligera ampliación */
-}
-
-.boton:active {
-    background-color: #003d80; /* Color aún más oscuro al hacer clic */
-    transform: scale(0.98); /* Efecto de compresión al hacer clic */
-}
-
-.boton:focus {
-    outline: none; /* Elimina el borde de enfoque por defecto */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.75); /* Sombra azul alrededor */
-}
-
-.form-label {
+.login__title {
+    font-size: 1.8rem;
     font-weight: bold;
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Styles */
+.login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login__label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+}
+
+.login__input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+    background-color: #fafafa;
+}
+
+.login__input:focus {
+    outline: none;
+    border-color: #000;
+    background-color: #fff;
+}
+
+/* Button Styles */
+.login__button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login__button:hover {
+    background-color: #444;
+}
+
+/* Register Link */
+.login__register {
+    font-size: 0.9rem;
     color: #555;
 }
 
-.form-control:focus {
-    border-color: #2a2c2e;
-    box-shadow: 0 0 5px rgba(70, 76, 82, 0.5);
-}
-
-a.text-primary {
+.login__link {
+    color: #000;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
-a.text-primary:hover {
-    text-decoration: underline;
+.login__link:hover {
+    color: #777;
 }
 
-/* Footer */
-
-.row {
-    margin-top: 30px;
-}
-
+/* Footer Styles */
 .footer {
-    background-color: #2e3134;
-    color: #fff;
-    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
-    font-size: 0.9rem;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+    background-color: #000;
+    color: #fff;
 }
 
-.footer a {
-    color: #f8f9fa;
+.footer__links {
+    margin-top: 0.5rem;
+}
+
+.footer__link {
+    color: #ccc;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease-in-out;
 }
 
-.footer a:hover {
-    text-decoration: underline;
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar-nav .nav-item .nav-link {
-        font-size: 1rem;
-        padding: 0.6rem 1rem;
-    }
-
-    .main-content {
-        padding: 60px 15px;
-    }
-
-    .card {
-        margin-bottom: 20px;
-    }
-
-    .row {
-        margin-top: 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    .main-content h1 {
-        font-size: 2rem;
-    }
-
-    .main-content p {
-        font-size: 1rem;
-    }
+.footer__link:hover {
+    color: #fff;
 }
