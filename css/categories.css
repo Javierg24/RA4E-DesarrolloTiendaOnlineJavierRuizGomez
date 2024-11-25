@@ -1,0 +1,138 @@
+/* General Reset */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+
+/* Navbar */
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    width: 180px;
+    height: 100px;
+}
+
+.navbar__menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar__list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar__link:hover {
+    color: #000;
+}
+
+.navbar__toggle {
+    display: none;
+}
+
+
+/* Header */
+
+.header {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.header__title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+
+/* Categories Section */
+
+.categories {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.categories__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.categories__item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categories__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.categories__link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.categories__name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+.categories__link:hover .categories__name {
+    color: #007bff;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__text {
+    margin: 0;
+    font-size: 0.875rem;
+}

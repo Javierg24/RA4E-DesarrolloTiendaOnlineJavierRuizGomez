@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - LongWay</title>
+    <link rel="stylesheet" href="../css/cart.css?v=1.0">
+    <link rel="stylesheet" href="carrito.css">
+</head>
+
+<body>
+    <div class="cart">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="#" class="navbar__brand">
+                    <img src="../img/logo.png" alt="Logo" class="navbar__logo">
+                </a>
+                <button class="navbar__toggle" aria-label="Abrir menú"></button>
+                <div class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li class="navbar__item"><a href="dashboard.html" class="navbar__link">Dashboard</a></li>
+                        <li class="navbar__item"><a href="categories.html" class="navbar__link">Categorías</a></li>
+                        <li class="navbar__item"><a href="cart.html" class="navbar__link">Carrito</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="cart__header">
+            <h1 class="cart__title">Carrito de Compras</h1>
+        </header>
+
+        <section class="cart__items">
+            <!-- Producto 1 -->
+            <div class="cart__item">
+                <img src="https://via.placeholder.com/80" alt="Producto 1" class="cart__item-image">
+                <div class="cart__item-info">
+                    <h2 class="cart__item-title">Camiseta Básica</h2>
+                    <p class="cart__item-price">$15.99</p>
+                </div>
+                <div class="cart__item-controls">
+                    <button class="cart__item-btn cart__item-btn--remove">-</button>
+                    <span class="cart__item-quantity">1</span>
+                    <button class="cart__item-btn cart__item-btn--add">+</button>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="cart__item">
+                <img src="https://via.placeholder.com/80" alt="Producto 2" class="cart__item-image">
+                <div class="cart__item-info">
+                    <h2 class="cart__item-title">Pantalón Casual</h2>
+                    <p class="cart__item-price">$25.99</p>
+                </div>
+                <div class="cart__item-controls">
+                    <button class="cart__item-btn cart__item-btn--remove">-</button>
+                    <span class="cart__item-quantity">2</span>
+                    <button class="cart__item-btn cart__item-btn--add">+</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="cart__footer">
+            <div class="cart__summary">
+                <p class="cart__total">Total: $67.97</p>
+                <button class="cart__checkout-btn">Finalizar Compra</button>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

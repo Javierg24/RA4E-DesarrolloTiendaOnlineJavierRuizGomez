@@ -1,76 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard</title>
-        <link rel="icon" type="image/png" href="../img/logo.png">
-        <link rel="stylesheet" href="../css/dashboard.css?v=1.0">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link rel="stylesheet" href="../css/dashboard.css?v=1.0">
+</head>
 
-    <body class="page page__dashboard">
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="navbar__container">
-                <a href="#" class="navbar__brand">
-                    <img src="../img/logo.png" alt="Logo" class="navbar__logo">
-                </a>
-                <button class="navbar__toggle" aria-label="Abrir menú"></button>
-                <div class="navbar__menu">
-                    <ul class="navbar__list">
-                        <li class="navbar__item"><a href="#"
-                                class="navbar__link">Categorías</a></li>
-                        <li class="navbar__item"><a href="#"
-                                class="navbar__link">Carrito</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Main Content -->
-        <main class="main-content">
-
-            <section class="categories">
-                <h2 class="categories__title">Categorías</h2>
-                <ul class="categories__list" id="categorias-list">
-                    <!-- Lista dinámica de categorías -->
+<body class="page page__dashboard">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="#" class="navbar__brand">
+                <img src="../img/logo.png" alt="Logo" class="navbar__logo">
+            </a>
+            <button class="navbar__toggle" aria-label="Abrir menú"></button>
+            <div class="navbar__menu">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="dashboard.html" class="navbar__link">Dashboard</a></li>
+                    <li class="navbar__item"><a href="categories.html" class="navbar__link">Categorías</a></li>
+                    <li class="navbar__item"><a href="cart.html" class="navbar__link">Carrito</a></li>
                 </ul>
-            </section>
+            </div>
+        </div>
+    </nav>
 
-            <h1 class="main-content__title">Bienvenidos a LongWay</h1>
-            <p class="main-content__description">
-                Explora nuestra tienda online y encuentra lo mejor en moda.
-                Conoce nuestras categorías y productos destacados.
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <section class="categories">
+            <h2 class="categories__title">Categorías</h2>
+            <ul class="categories__list" id="categorias-list">
+                <!-- Lista dinámica de categorías -->
+            </ul>
+        </section>
+
+        <h1 class="main-content__title">Bienvenidos a LongWay</h1>
+        <p class="main-content__description">
+            Explora nuestra tienda online y encuentra lo mejor en moda. Conoce nuestras categorías y productos destacados.
+        </p>
+
+        <!-- Categorías -->
+
+        <!-- Productos destacados -->
+        <div class="featured-products">
+            <h3 class="featured-products__title">Productos Destacados</h3>
+            <div id="featured-products-grid" class="featured-products__grid">
+                <!-- Los productos destacados se agregarán aquí dinámicamente -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">&copy; 2024 LongWay. Todos los derechos reservados.
             </p>
-
-            <!-- Categorías -->
-
-            <!-- Productos destacados -->
-            <div class="featured-products">
-                <h3 class="featured-products__title">Productos Destacados</h3>
-                <div id="featured-products-grid"
-                    class="featured-products__grid">
-                    <!-- Los productos destacados se agregarán aquí dinámicamente -->
-                </div>
+            <div class="footer__links">
+                <a href="#" class="footer__link">Política de privacidad</a>
+                <span class="footer__separator">|</span>
+                <a href="#" class="footer__link">Términos y condiciones</a>
             </div>
+        </div>
+    </footer>
 
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer__container">
-                <p class="footer__text">&copy; 2024 LongWay. Todos los derechos
-                    reservados.</p>
-                <div class="footer__links">
-                    <a href="#" class="footer__link">Política de privacidad</a>
-                    <span class="footer__separator">|</span>
-                    <a href="#" class="footer__link">Términos y condiciones</a>
-                </div>
-            </div>
-        </footer>
-
-        <script src="../js/dashboard.js"></script>
-    </body>
+    <script src="../js/dashboard.js"></script>
+</body>
 
 </html>

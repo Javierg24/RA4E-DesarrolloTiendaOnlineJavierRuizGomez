@@ -1,9 +1,9 @@
 // Cargar las categorías desde el archivo JSON
 // Método principal que se ejecuta cuando el DOM esté cargado
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', async function() {
     try {
         const data = await fetchData('../json/tienda.json');
-        
+
         if (data) {
             // Llamar a los métodos para cargar las categorías y productos
             cargarCategorias(data.categorias);
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 async function fetchData(url) {
     try {
         const response = await fetch(url);
-        
+
         if (!response.ok) {
             throw new Error('No se pudo cargar el archivo JSON');
         }
@@ -59,7 +59,7 @@ function cargarProductosDestacados(productos) {
 
         // Crear el contenido de la tarjeta
         card.innerHTML = `
-            <img src="https://via.placeholder.com/150" class="product-card__image" alt="${producto.nombre}">
+            <img src="https://via.placeholder.com/100" class="product-card__image" alt="${producto.nombre}">
             <div class="product-card__info">
                 <h5 class="product-card__title">${producto.nombre}</h5>
                 <p class="product-card__price">$${producto.precio}</p>

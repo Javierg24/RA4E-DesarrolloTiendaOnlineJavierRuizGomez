@@ -1,40 +1,40 @@
 {
-    "categorias": [
-      {
-        "id_categoria": 1,
-        "nombre": "Camisetas"
-      },
-      {
-        "id_categoria": 2,
-        "nombre": "Pantalones"
-      },
-      {
-        "id_categoria": 3,
-        "nombre": "Zapatos"
-      }
+    "categorias": [{
+            "id_categoria": 1,
+            "nombre": "Camisetas"
+        },
+        {
+            "id_categoria": 2,
+            "nombre": "Pantalones"
+        },
+        {
+            "id_categoria": 3,
+            "nombre": "Zapatos"
+        }
     ],
-    "productos": [
-      {
-        "id": 1,
-        "nombre": "Camiseta Básica",
-        "precio": 15.99,
-        "destacado": true,
-        "id_categoria": 1
-      },
-      {
-        "id": 2,
-        "nombre": "Pantalón Casual",
-        "precio": 25.99,
-        "destacado": false,
-        "id_categoria": 2
-      },
-      {
-        "id": 3,
-        "nombre": "Zapatos Deportivos",
-        "precio": 45.99,
-        "destacado": true,
-        "id_categoria": 3
-      }
+    "productos": [{
+            "id": 1,
+            "nombre": "Camiseta Básica",
+            "precio": 15.99,
+            "destacado": true,
+            "id_categoria": 1,
+            "descripcion": "Camiseta de algodón suave, perfecta para un estilo casual. Disponible en varios colores y tallas, con un diseño clásico que combina con todo."
+        },
+        {
+            "id": 2,
+            "nombre": "Pantalón Casual",
+            "precio": 25.99,
+            "destacado": false,
+            "id_categoria": 2,
+            "descripcion": "Pantalón de corte recto confeccionado en tela ligera y transpirable. Ideal para ocasiones informales o para un look relajado. Incluye bolsillos funcionales."
+        },
+        {
+            "id": 3,
+            "nombre": "Zapatos Deportivos",
+            "precio": 45.99,
+            "destacado": true,
+            "id_categoria": 3,
+            "descripcion": "Zapatos deportivos con suela acolchada y diseño ergonómico. Fabricados con materiales transpirables y duraderos, ideales para actividades diarias o ejercicio."
+        }
     ]
-  }
-  
+}
