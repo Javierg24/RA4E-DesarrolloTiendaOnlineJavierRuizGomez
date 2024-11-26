@@ -324,18 +324,6 @@ body {
     background-color: #333;
 }
 
-/* Diseño responsivo */
-@media (max-width: 768px) {
-    .product-card {
-        width: calc(50% - 1.33rem); /* Dos productos por fila */
-    }
-}
-
-@media (max-width: 480px) {
-    .product-card {
-        width: 100%; /* Un producto por fila */
-    }
-}
 /* Footer */
 .footer {
     background-color: #000;
@@ -376,6 +364,21 @@ body {
 
 .footer__separator {
     color: #666;
+}
+
+
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 1.33rem); /* Dos productos por fila */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%; /* Un producto por fila */
+    }
 }
 
 /* Responsiveness */

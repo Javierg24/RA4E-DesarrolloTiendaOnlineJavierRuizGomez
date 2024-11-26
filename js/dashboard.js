@@ -1,13 +1,13 @@
 // Cargar las categorías desde el archivo JSON
 // Método principal que se ejecuta cuando el DOM esté cargado
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     try {
         const data = await fetchData('../json/tienda.json');
 
         if (data) {
             // Llamar a los métodos para cargar las categorías y productos
             cargarCategorias(data.categorias);
-            cargarProductosDestacados(data.productos);
+            cargarProductosDestacados(data.productos);            
         }
     } catch (error) {
         console.error('Error al cargar los datos:', error);
@@ -55,18 +55,29 @@ function cargarProductosDestacados(productos) {
 
     productosDestacados.forEach(producto => {
         const card = document.createElement('div');
-        card.classList.add('product-card'); // Clase de la tarjeta
-
-        // Crear el contenido de la tarjeta
+        card.classList.add('product-card');        
         card.innerHTML = `
             <img src="https://via.placeholder.com/100" class="product-card__image" alt="${producto.nombre}">
             <div class="product-card__info">
                 <h5 class="product-card__title">${producto.nombre}</h5>
                 <p class="product-card__price">$${producto.precio}</p>
-                <button class="product-card__button">Añadir al carrito</button>
+                 <button class="product-card__button" data-id="${producto.id}">Ver producto</button>
             </div>
         `;
 
         featuredProductsGrid.appendChild(card);
+    });
+
+    //Al hacer click en el botón de ver producto se abre el producto en la pagina html pasando por el id del producto por la URL
+    abrirProducto();
+}
+
+function abrirProducto() {
+    const botones = document.querySelectorAll('.product-card__button');
+    botones.forEach(boton => {
+        boton.addEventListener('click', function () {
+            const productId = boton.dataset.id;
+            window.location.href = `../html/product.html?id=${productId}`; // Redirigir con el ID del producto
+        });
     });
 }
