@@ -1,5 +1,6 @@
 {
-    "categorias": [{
+    "categorias": [
+        {
             "id_categoria": 1,
             "nombre": "Camisetas"
         },
@@ -10,9 +11,26 @@
         {
             "id_categoria": 3,
             "nombre": "Zapatos"
+        },
+        {
+            "id_categoria": 4,
+            "nombre": "Chaquetas"
+        },
+        {
+            "id_categoria": 5,
+            "nombre": "Accesorios"
+        },
+        {
+            "id_categoria": 6,
+            "nombre": "Ropa Interior"
+        },
+        {
+            "id_categoria": 7,
+            "nombre": "Deportiva"
         }
     ],
-    "productos": [{
+    "productos": [
+        {
             "id": 1,
             "nombre": "Camiseta Básica",
             "precio": 15.99,
@@ -35,10 +53,63 @@
             "destacado": true,
             "id_categoria": 3,
             "descripcion": "Zapatos deportivos con suela acolchada y diseño ergonómico. Fabricados con materiales transpirables y duraderos, ideales para actividades diarias o ejercicio."
+        },
+        {
+            "id": 4,
+            "nombre": "Chaqueta de Cuero",
+            "precio": 120.99,
+            "destacado": true,
+            "id_categoria": 4,
+            "descripcion": "Chaqueta de cuero genuino con diseño moderno y ajustado. Incluye cremalleras metálicas y bolsillos amplios, ideal para un look sofisticado."
+        },
+        {
+            "id": 5,
+            "nombre": "Bufanda de Lana",
+            "precio": 19.99,
+            "destacado": false,
+            "id_categoria": 5,
+            "descripcion": "Bufanda de lana tejida a mano, perfecta para mantener el calor en invierno. Disponible en una variedad de colores cálidos."
+        },
+        {
+            "id": 6,
+            "nombre": "Reloj Deportivo",
+            "precio": 59.99,
+            "destacado": true,
+            "id_categoria": 5,
+            "descripcion": "Reloj con cronómetro y resistencia al agua hasta 50m. Ideal para deportes y actividades al aire libre."
+        },
+        {
+            "id": 7,
+            "nombre": "Camiseta Deportiva",
+            "precio": 18.99,
+            "destacado": false,
+            "id_categoria": 7,
+            "descripcion": "Camiseta ligera de poliéster, diseñada para deportes de alto rendimiento. Transpirable y de secado rápido."
+        },
+        {
+            "id": 8,
+            "nombre": "Ropa Interior Térmica",
+            "precio": 25.99,
+            "destacado": false,
+            "id_categoria": 6,
+            "descripcion": "Ropa interior térmica ideal para días fríos. Confeccionada con material elástico que proporciona comodidad y calor."
+        },
+        {
+            "id": 9,
+            "nombre": "Zapatos Elegantes",
+            "precio": 89.99,
+            "destacado": false,
+            "id_categoria": 3,
+            "descripcion": "Zapatos de cuero elegantes con suela antideslizante. Perfectos para eventos formales y ocasiones especiales."
+        },
+        {
+            "id": 10,
+            "nombre": "Sudadera con Capucha",
+            "precio": 39.99,
+            "destacado": false,
+            "id_categoria": 7,
+            "descripcion": "Sudadera de algodón con capucha ajustable y bolsillo frontal. Ideal para un look casual y deportivo."
         }
     ],
-    "carrito": [
-
-        
-    ]
+    "carrito": []
 }

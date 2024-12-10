@@ -7,6 +7,7 @@ session_start();
 // Incluir el archivo login.php que contiene la lógica de autenticación
 include 'login.php';
 
+
 // Comprobar si el método de la solicitud es POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Llamar a la función que maneja el login
@@ -16,7 +17,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode(['message' => 'Método no permitido']);
     exit;
 }
-
-
-
 ?>

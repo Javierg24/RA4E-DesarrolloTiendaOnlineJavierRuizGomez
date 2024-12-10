@@ -51,8 +51,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    background-color: #fff;    
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -97,6 +96,17 @@ body {
     display: none;
 }
 
+.imagen__logo {
+    width: 100%;
+    transition: opacity 0.5s ease;
+    -webkit-user-drag: none; /* Para WebKit */
+    user-drag: none; /* Para otros navegadores */
+}
+
+.imagen__logo:hover {
+    opacity: 0.8;
+}
+
 /* Main Content */
 .main-content {
     padding: 2rem;
@@ -129,28 +139,18 @@ body {
 }
 
 /* Categorías */
-.categories {
-    margin-top: 1rem;
-    text-align: left;
-    
-}
-
-.categories__title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #000;
-}
-
-.categories__list {
+.categories__list {   
+    text-align: center;
+    justify-content: space-around; 
     display: flex;
-    flex-direction: column;
-    animation: appear 1s ease-out forwards;
-    gap: 0.5rem;
-    margin-bottom: 2%;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben en una fila */
+    gap: 1rem; /* Espaciado entre elementos */
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeIn 1s ease-out forwards; /* Efecto de aparición */
 }
 
 .categories__list li {
+    margin-top: 2%;
     padding: 0.5rem 1rem;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -159,8 +159,38 @@ body {
     cursor: pointer;
     list-style: none;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    opacity: 0; 
+    animation: fadeIn 0.5s ease-out forwards; 
 }
 
+.categories__list li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.categories__list li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.categories__list li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.categories__list li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.categories__list li:nth-child(5) {
+    animation-delay: 1s;
+}
+.categories__list li:nth-child(6) {
+    animation-delay: 1.2s;
+}
+.categories__list li:nth-child(7) {
+    animation-delay: 1.4s;
+}
+
+
+/* Efecto hover */
 .categories__list li:hover {
     background-color: #e0e0e0;
     color: #000;
