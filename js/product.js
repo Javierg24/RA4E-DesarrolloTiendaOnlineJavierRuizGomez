@@ -51,7 +51,7 @@ function agregarAlCarrito(producto) {
 
         if (productoEnCarrito) {
             // Si el producto ya está en el carrito, incrementar la cantidad
-            productoEnCaººrrito.cantidad += 1;
+            productoEnCarrito.cantidad += 1;
 
             // Guardar el carrito actualizado en el localStorage
             localStorage.setItem('carrito', JSON.stringify(carrito));
