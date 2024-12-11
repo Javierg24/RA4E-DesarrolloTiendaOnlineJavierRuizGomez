@@ -25,8 +25,7 @@ async function login(event) {
         return;
     }    
     
-    if (esvalido) {
-        // Si las validaciones pasan, enviar las credenciales al servidor
+    if (esvalido) {        
         try {
             const response = await fetch('../php/procesar.php', {
                 method: 'POST',
