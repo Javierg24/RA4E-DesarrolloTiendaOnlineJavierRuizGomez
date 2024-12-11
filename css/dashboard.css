@@ -9,7 +9,7 @@ body {
     font-family: 'Arial', sans-serif;
     color: #333;
     background-color: #f7f7f7;
-    line-height: 1.6;
+    line-height: 1.6;        
 }
 
 /* Animaciones */
@@ -108,7 +108,7 @@ body {
 }
 
 /* Main Content */
-.main-content {
+.main-content {    
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;

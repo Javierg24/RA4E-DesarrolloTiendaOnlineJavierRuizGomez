@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function cargarCategorias(categorias) {
     const categoriasList = document.getElementById('categories__list');
     categoriasList.innerHTML = ''; // Limpiar el contenido previo
-
     categorias.forEach(categoria => {
         const li = document.createElement('li');
         li.classList.add('categories__link');
