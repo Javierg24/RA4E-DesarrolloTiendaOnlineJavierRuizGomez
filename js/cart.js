@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     loadCartItems();  // Cargar los productos al inicio
+    mostrarProductosVistos();  // Mostrar productos recientemente vistos
 
     // Agregar eventos a los botones de aumentar y disminuir cantidad
     const cartItemsContainer = document.getElementById('cart-items');
@@ -32,8 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-    // Función para cargar los productos del carrito
-
+// Función para cargar los productos del carrito
 function loadCartItems() {
     const cartItems = JSON.parse(localStorage.getItem('carrito')) || [];
     const cartItemsContainer = document.getElementById('cart-items');
@@ -119,6 +119,29 @@ function validarCarrito(carrito) {
             console.error('Error al validar el carrito:', error);
             throw error;
         });
+}
+
+// Función para mostrar los productos vistos recientemente
+function mostrarProductosVistos() {
+    const productosVistosKey = 'productosVistos';
+    const productosVistos = JSON.parse(localStorage.getItem(productosVistosKey)) || [];
+    const container = document.getElementsByClassName('products__recently--viewed')[0];
+    if (productosVistos.length > 0) {
+        productosVistos.forEach(producto => {
+            const productoHTML = `
+                <div class="recent-product">
+                    <a href="${producto.link}">
+                        <img src="${producto.imagen}" alt="${producto.nombre}" />
+                        <p>${producto.nombre}</p>
+                        <p>${producto.precio}</p>
+                    </a>
+                </div>
+            `;
+            container.innerHTML += productoHTML;
+        });
+    } else {
+        container.innerHTML = '<p>No has visto ningún producto recientemente.</p>';
+    }
 }
 
 function cerrarSesion() {
