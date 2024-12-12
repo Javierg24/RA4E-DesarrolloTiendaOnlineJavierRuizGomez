@@ -22,13 +22,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     } else {
         alert('No se proporcionó un ID de producto válido.');
     }
+
+    const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
+    botonCerrarSesion.addEventListener('click', cerrarSesion);   
 });
 
 function mostrarProducto(producto) {
     const container = document.getElementById('product-detail-container');
     container.innerHTML = `
         <div class="product-detail__card">
-            <img src="https://via.placeholder.com/300" class="product-detail__image" alt="${producto.nombre}">
+            <img src="${producto.imagen}" class="product-detail__image" alt="${producto.nombre}">
             <div class="product-detail__info">
                 <h2 class="product-detail__title">${producto.nombre}</h2>
                 <p class="product-detail__price">$${producto.precio}</p>
@@ -70,4 +73,9 @@ function agregarAlCarrito(producto) {
             alert('Producto agregado al carrito.');
         }
     });
+}
+
+function cerrarSesion() {
+    localStorage.clear(); // Limpia todo el localStorage
+    window.location.href = '../html/login.html';
 }

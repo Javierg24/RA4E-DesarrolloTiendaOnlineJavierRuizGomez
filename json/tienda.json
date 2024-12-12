@@ -36,7 +36,8 @@
             "precio": 15.99,
             "destacado": true,
             "id_categoria": 1,
-            "descripcion": "Camiseta de algodón suave, perfecta para un estilo casual. Disponible en varios colores y tallas, con un diseño clásico que combina con todo."
+            "descripcion": "Camiseta de algodón suave, perfecta para un estilo casual. Disponible en varios colores y tallas, con un diseño clásico que combina con todo.",
+            "imagen": "../img/CamisetaNegra.jpg"
         },
         {
             "id": 2,
@@ -44,7 +45,8 @@
             "precio": 25.99,
             "destacado": false,
             "id_categoria": 2,
-            "descripcion": "Pantalón de corte recto confeccionado en tela ligera y transpirable. Ideal para ocasiones informales o para un look relajado. Incluye bolsillos funcionales."
+            "descripcion": "Pantalón de corte recto confeccionado en tela ligera y transpirable. Ideal para ocasiones informales o para un look relajado. Incluye bolsillos funcionales.",
+            "imagen": "../img/pantalon.jpg"
         },
         {
             "id": 3,
@@ -52,7 +54,8 @@
             "precio": 45.99,
             "destacado": true,
             "id_categoria": 3,
-            "descripcion": "Zapatos deportivos con suela acolchada y diseño ergonómico. Fabricados con materiales transpirables y duraderos, ideales para actividades diarias o ejercicio."
+            "descripcion": "Zapatos deportivos con suela acolchada y diseño ergonómico. Fabricados con materiales transpirables y duraderos, ideales para actividades diarias o ejercicio.",
+            "imagen": "../img/zapatos.jpg"
         },
         {
             "id": 4,
@@ -60,23 +63,26 @@
             "precio": 120.99,
             "destacado": true,
             "id_categoria": 4,
-            "descripcion": "Chaqueta de cuero genuino con diseño moderno y ajustado. Incluye cremalleras metálicas y bolsillos amplios, ideal para un look sofisticado."
+            "descripcion": "Chaqueta de cuero genuino con diseño moderno y ajustado. Incluye cremalleras metálicas y bolsillos amplios, ideal para un look sofisticado.",
+            "imagen": "../img/chaqueta.jpg"
         },
         {
             "id": 5,
-            "nombre": "Bufanda de Lana",
+            "nombre": "Gorro de Lana",
             "precio": 19.99,
             "destacado": false,
             "id_categoria": 5,
-            "descripcion": "Bufanda de lana tejida a mano, perfecta para mantener el calor en invierno. Disponible en una variedad de colores cálidos."
+            "descripcion": "Gorro de lana tejida a mano, perfecto para mantener el calor en invierno. Disponible en una variedad de colores cálidos.",
+            "imagen": "../img/gorro.jpg"
         },
         {
             "id": 6,
-            "nombre": "Reloj Deportivo",
+            "nombre": "Sudadera Deportiva",
             "precio": 59.99,
             "destacado": true,
             "id_categoria": 5,
-            "descripcion": "Reloj con cronómetro y resistencia al agua hasta 50m. Ideal para deportes y actividades al aire libre."
+            "descripcion": "Sudadera de algodón con capucha ajustable y bolsillo frontal. Ideal para un look casual y deportivo.",
+            "imagen": "../img/sudaderaDeportiva.jpg"
         },
         {
             "id": 7,
@@ -84,7 +90,8 @@
             "precio": 18.99,
             "destacado": false,
             "id_categoria": 7,
-            "descripcion": "Camiseta ligera de poliéster, diseñada para deportes de alto rendimiento. Transpirable y de secado rápido."
+            "descripcion": "Camiseta ligera de poliéster, diseñada para deportes de alto rendimiento. Transpirable y de secado rápido.",
+            "imagen": "../img/camisetaDeportiva.jpg"
         },
         {
             "id": 8,
@@ -92,7 +99,8 @@
             "precio": 25.99,
             "destacado": false,
             "id_categoria": 6,
-            "descripcion": "Ropa interior térmica ideal para días fríos. Confeccionada con material elástico que proporciona comodidad y calor."
+            "descripcion": "Ropa interior térmica ideal para días fríos. Confeccionada con material elástico que proporciona comodidad y calor.",
+            "imagen": "../img/camisetaInterior.jpg"
         },
         {
             "id": 9,
@@ -100,7 +108,8 @@
             "precio": 89.99,
             "destacado": false,
             "id_categoria": 3,
-            "descripcion": "Zapatos de cuero elegantes con suela antideslizante. Perfectos para eventos formales y ocasiones especiales."
+            "descripcion": "Zapatos de cuero elegantes con suela antideslizante. Perfectos para eventos formales y ocasiones especiales.",
+            "imagen": "../img/zapatosElegantes.jpg"
         },
         {
             "id": 10,
@@ -108,7 +117,8 @@
             "precio": 39.99,
             "destacado": false,
             "id_categoria": 7,
-            "descripcion": "Sudadera de algodón con capucha ajustable y bolsillo frontal. Ideal para un look casual y deportivo."
+            "descripcion": "Sudadera de algodón con capucha ajustable y bolsillo frontal. Ideal para un look casual y deportivo.",
+            "imagen": "../img/sudadera.jpg"
         }
     ]
 }

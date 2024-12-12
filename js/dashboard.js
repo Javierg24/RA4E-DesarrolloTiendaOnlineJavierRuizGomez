@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('No hay datos en localStorage.');
         alert('No se encontraron datos. Por favor, verifica el almacenamiento local.');
     }
+
+    const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
+    botonCerrarSesion.addEventListener('click', cerrarSesion);    
 });
 
 // Método para cargar las categorías en el DOM
@@ -40,7 +43,7 @@ function cargarProductosDestacados(productos) {
         const card = document.createElement('div');
         card.classList.add('product-card');
         card.innerHTML = `
-            <img src="https://via.placeholder.com/100" class="product-card__image" alt="${producto.nombre}">
+            <img src="${producto.imagen}" class="product-card__image" alt="${producto.nombre}">
             <div class="product-card__info">
                 <h5 class="product-card__title">${producto.nombre}</h5>
                 <p class="product-card__price">$${producto.precio}</p>
@@ -63,4 +66,10 @@ function abrirProducto() {
             window.location.href = `../html/product.html?id=${productId}`;
         });
     });
+}
+
+
+function cerrarSesion() {
+    localStorage.clear(); // Limpia todo el localStorage
+    window.location.href = '../html/login.html';
 }

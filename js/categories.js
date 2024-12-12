@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('No hay datos en localStorage.');
         alert('No se encontraron datos. Por favor, verifica el almacenamiento local.');
     }
+
+    const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
+    botonCerrarSesion.addEventListener('click', cerrarSesion);   
 });
 
 // Método para cargar las categorías en el DOM
@@ -25,4 +28,9 @@ function cargarCategorias(categorias) {
         li.textContent = categoria.nombre;
         categoriasList.appendChild(li);
     });
+}
+
+function cerrarSesion() {
+    localStorage.clear(); // Limpia todo el localStorage
+    window.location.href = '../html/login.html';
 }
