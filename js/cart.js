@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
-    botonCerrarSesion.addEventListener('click', cerrarSesion);   
+    botonCerrarSesion.addEventListener('click', cerrarSesion);
 
 });
 
@@ -123,18 +123,15 @@ function validarCarrito(carrito) {
 
 // Función para mostrar los productos vistos recientemente
 function mostrarProductosVistos() {
-    const productosVistosKey = 'productosVistos';
-    const productosVistos = JSON.parse(localStorage.getItem(productosVistosKey)) || [];
+    const productosVistos = JSON.parse(localStorage.getItem('productosVistos')) || [];
     const container = document.getElementsByClassName('products__recently--viewed')[0];
     if (productosVistos.length > 0) {
-        productosVistos.forEach(producto => {
+        productosVistos.slice(-4).reverse().forEach(producto => {
             const productoHTML = `
                 <div class="recent-product">
-                    <a href="${producto.link}">
                         <img src="${producto.imagen}" alt="${producto.nombre}" />
                         <p>${producto.nombre}</p>
                         <p>${producto.precio}</p>
-                    </a>
                 </div>
             `;
             container.innerHTML += productoHTML;

@@ -46,21 +46,14 @@ function agregarAlCarrito(producto) {
     const botonAgregar = document.querySelector('.product-add__cart');
 
     botonAgregar.addEventListener('click', function () {
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-        // Verificar si el producto ya está en el carrito
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];        
         const productoEnCarrito = carrito.find(item => item.id === producto.id);
-
-        if (productoEnCarrito) {
-            // Si el producto ya está en el carrito, incrementar la cantidad
+        if (productoEnCarrito) {            
             productoEnCarrito.cantidad += 1;
-        } else {
-            // Si el producto no está en el carrito, agregarlo con cantidad 1
+        } else {            
             const productoConCantidad = { ...producto, cantidad: 1 };
             carrito.push(productoConCantidad);
-        }
-
-        // Guardar el carrito actualizado en el localStorage
+        }        
         localStorage.setItem('carrito', JSON.stringify(carrito));
 
         alert(productoEnCarrito ? 'Cantidad del producto incrementada.' : 'Producto agregado al carrito.');
@@ -71,19 +64,12 @@ function agregarAlCarrito(producto) {
 function agregarAProductosVistos(producto) {
     const productosVistosKey = 'productosVistos';
     let productosVistos = JSON.parse(localStorage.getItem(productosVistosKey)) || [];
-
-    // Verificar si el producto ya está en la lista de productos recientemente vistos
     const productoYaVisto = productosVistos.find(item => item.id === producto.id);
-
     if (!productoYaVisto) {
-        productosVistos.push(producto); // Agregar el producto a la lista
-
-        // Limitar a los últimos 5 productos vistos
-        if (productosVistos.length > 5) {
-            productosVistos = productosVistos.slice(-5); // Mantener solo los últimos 5
+        productosVistos.push(producto); 
+        if (productosVistos.length > 4) {
+            productosVistos = productosVistos.slice(-4);
         }
-
-        // Guardar la lista actualizada en localStorage
         localStorage.setItem(productosVistosKey, JSON.stringify(productosVistos));
     }
 }

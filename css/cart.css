@@ -58,6 +58,54 @@ body {
 }
 
 
+/* Products Recently Viewed Section */
+
+.products__recently--viewed {
+    background-color: #fff;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.products__recently--viewed--title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.recent-product {
+    display: inline-block;
+    width: calc(25% - 1rem);
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.recent-product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.recent-product p {
+    font-size: 0.9rem;
+    color: #030303;
+    margin-top: 0.5rem;
+    text-decoration: none;
+}
+
+
+.recent-product:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+
 /* Cart Container */
 
 .cart {

@@ -21,14 +21,40 @@ document.addEventListener('DOMContentLoaded', function () {
 // Método para cargar las categorías en el DOM
 function cargarCategorias(categorias) {
     const categoriasList = document.getElementById('categories__list');
-    categoriasList.innerHTML = ''; // Limpiar el contenido previo
-    categorias.forEach(categoria => {
+    categoriasList.innerHTML = ''; 
+
+    categorias.forEach((categoria, index) => {
         const li = document.createElement('li');
-        li.classList.add('categories__link');
+        li.classList.add('categories__item');
         li.textContent = categoria.nombre;
+        li.addEventListener('click', () => mostrarProductos(categoria, li));
         categoriasList.appendChild(li);
     });
 }
+function mostrarProductos(categoria, categoriaElement) {
+    const productosSection = document.querySelector('.products');
+    const productosList = productosSection.querySelector('.products__list');
+    productosList.innerHTML = ''; // Limpiar los productos previos
+
+    // Mostrar la sección de productos
+    productosSection.style.display = 'flex';
+
+    // Mostrar los productos de la categoría seleccionada
+    categoria.productos.forEach(producto => {
+        const productoItem = document.createElement('div');
+        productoItem.classList.add('products__item');
+        productoItem.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <p>${producto.nombre}</p>
+        `;
+        productosList.appendChild(productoItem);
+    });
+
+    // Resaltar la categoría seleccionada
+    document.querySelectorAll('.categories__item').forEach(item => item.classList.remove('selected'));
+    categoriaElement.classList.add('selected');
+}
+
 
 function cerrarSesion() {
     localStorage.clear(); // Limpia todo el localStorage
