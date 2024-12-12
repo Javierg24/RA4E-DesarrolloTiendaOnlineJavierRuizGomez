@@ -51,32 +51,24 @@ document.addEventListener('DOMContentLoaded', function () {
         cartTotalElement.textContent = `Total: $${total.toFixed(2)}`;
     }
 
-    // Función para manejar el cambio de cantidad
     function handleQuantityChange(event) {
         const cartItems = JSON.parse(localStorage.getItem('carrito')) || [];
-        const productId = event.target.getAttribute('data-id');
-        
-        // Buscar el producto que corresponde al botón clicado
-        const product = cartItems.find(item => item.id == productId);
-        
-        // Comprobar si se encontró el producto
+        const productId = event.target.getAttribute('data-id');                
+        const product = cartItems.find(item => item.id == productId);                
         if (product) {
             if (event.target.classList.contains('cart__item-btn--add')) {
-                product.cantidad += 1;  // Aumentar cantidad
-            } else if (event.target.classList.contains('cart__item-btn--remove') && product.cantidad > 0) {
-                product.cantidad -= 1;  // Decrecer cantidad, no menor que 1
-                if(product.cantidad === 0){
-                    const index = cartItems.findIndex(item => item.id === productId);
-                    if (index !== -1) {
-                        cartItems.splice(index, 1); // Eliminar el producto del carrito
-                    }
+                product.cantidad += 1; // Aumentar cantidad
+            } else if (event.target.classList.contains('cart__item-btn--remove')) {
+                product.cantidad -= 1; // Reducir cantidad
+                if (product.cantidad <= 0) {                    
+                    const updatedCartItems = cartItems.filter(item => item.id != productId);
+                    localStorage.setItem('carrito', JSON.stringify(updatedCartItems));
+                } else {                    
+                    localStorage.setItem('carrito', JSON.stringify(cartItems));
                 }
-            }
-
-            // Actualizar el carrito en el localStorage
-            updateCart(cartItems);
-            
-            // Recargar los productos en la vista
+            } else {                
+                localStorage.setItem('carrito', JSON.stringify(cartItems));
+            }            
             loadCartItems();
         }
     }
