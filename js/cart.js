@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-    const botonFinalizarCompra = document.getElementsByClassName('cart__checkout-btn')[0]; // Selecciona el primer elemento
+    const botonFinalizarCompra = document.getElementsByClassName('cart__checkout-btn')[0];
 
     botonFinalizarCompra.addEventListener('click', function () {
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -17,20 +16,18 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 
-    loadCartItems();  // Cargar los productos al inicio
-    mostrarProductosVistos();  // Mostrar productos recientemente vistos
+    loadCartItems(); // Cargar los productos al inicio
+    mostrarProductosVistos(); // Mostrar productos recientemente vistos
 
-    // Agregar eventos a los botones de aumentar y disminuir cantidad
     const cartItemsContainer = document.getElementById('cart-items');
     cartItemsContainer.addEventListener('click', function (event) {
         if (event.target.classList.contains('cart__item-btn--add') || event.target.classList.contains('cart__item-btn--remove')) {
-            handleQuantityChange(event);  // Llamar a la función para actualizar la cantidad
+            handleQuantityChange(event); // Llamar a la función para actualizar la cantidad
         }
     });
 
     const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
     botonCerrarSesion.addEventListener('click', cerrarSesion);
-
 });
 
 // Función para cargar los productos del carrito
@@ -40,10 +37,8 @@ function loadCartItems() {
     const cartTotalElement = document.getElementById('cart-total');
     let total = 0;
 
-    // Limpiar los productos actuales
     cartItemsContainer.innerHTML = '';
 
-    // Recorrer los productos y mostrarlos
     cartItems.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.classList.add('cart__item');
@@ -61,38 +56,29 @@ function loadCartItems() {
             `;
 
         cartItemsContainer.appendChild(itemElement);
-
-        // Sumar el total
         total += item.precio * item.cantidad;
     });
 
-    // Mostrar el total actualizado
     cartTotalElement.textContent = `Total: $${total.toFixed(2)}`;
 }
 
 function handleQuantityChange(event) {
     const cartItems = JSON.parse(localStorage.getItem('carrito')) || [];
     const productId = event.target.getAttribute('data-id');
-    const productIndex = cartItems.findIndex(item => item.id == productId); // Obtener el índice del producto
+    const productIndex = cartItems.findIndex(item => item.id == productId);
 
     if (productIndex !== -1) {
         if (event.target.classList.contains('cart__item-btn--add')) {
-            // Aumentar cantidad
             cartItems[productIndex].cantidad += 1;
         } else if (event.target.classList.contains('cart__item-btn--remove')) {
-            // Reducir cantidad
             cartItems[productIndex].cantidad -= 1;
             if (cartItems[productIndex].cantidad <= 0) {
-                // Eliminar el producto si la cantidad es 0 o menos
                 cartItems.splice(productIndex, 1);
             }
         }
     }
 
-    // Actualizar el localStorage con el carrito modificado
     localStorage.setItem('carrito', JSON.stringify(cartItems));
-
-    // Recargar los productos del carrito en la página
     loadCartItems();
 }
 
@@ -102,7 +88,7 @@ function handleQuantityChange(event) {
  * @returns {Promise} - Resolución con el estado y datos de la validación.
  */
 function validarCarrito(carrito) {
-    return fetch('../php/carrito.php', {
+    return fetch('../php/procesar.php', { // Cambiamos la ruta al endpoint actualizado
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -129,9 +115,9 @@ function mostrarProductosVistos() {
         productosVistos.slice(-4).reverse().forEach(producto => {
             const productoHTML = `
                 <div class="recent-product">
-                        <img src="${producto.imagen}" alt="${producto.nombre}" />
-                        <p>${producto.nombre}</p>
-                        <p>${producto.precio}</p>
+                    <img src="${producto.imagen}" alt="${producto.nombre}" />
+                    <p>${producto.nombre}</p>
+                    <p>${producto.precio}</p>
                 </div>
             `;
             container.innerHTML += productoHTML;
@@ -142,6 +128,6 @@ function mostrarProductosVistos() {
 }
 
 function cerrarSesion() {
-    localStorage.clear(); // Limpia todo el localStorage
+    localStorage.clear();
     window.location.href = '../html/login.html';
 }

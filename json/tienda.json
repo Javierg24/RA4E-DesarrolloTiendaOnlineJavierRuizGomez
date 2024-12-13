@@ -61,7 +61,7 @@
             "id": 4,
             "nombre": "Chaqueta de Cuero",
             "precio": 120.99,
-            "destacado": true,
+            "destacado": false,
             "id_categoria": 4,
             "descripcion": "Chaqueta de cuero genuino con diseño moderno y ajustado. Incluye cremalleras metálicas y bolsillos amplios, ideal para un look sofisticado.",
             "imagen": "../img/chaqueta.jpg"

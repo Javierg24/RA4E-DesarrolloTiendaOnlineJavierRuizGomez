@@ -3,13 +3,12 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
-    color: #333;
+    color: #333;    
 }
 
 /* Navbar */
 .navbar {
     background-color: #fff;
-    border-bottom: 1px solid #ddd;
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -18,24 +17,23 @@ body {
 
 .navbar__container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar__logo {
-    width: 180px;
-    height: 100px;
+    align-items: center; /* Centrar elementos verticalmente */
+    justify-content: space-between; /* Espaciar elementos horizontalmente */
 }
 
 .navbar__menu {
     display: flex;
-    gap: 2rem;
+    gap: 2rem; /* Espacio entre los elementos del menú */
+    align-items: center; /* Centrar elementos verticalmente */
 }
 
 .navbar__list {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center; /* Centrar elementos verticalmente */
+    margin: 0;
+    padding: 0;
 }
 
 .navbar__link {
@@ -47,7 +45,43 @@ body {
 }
 
 .navbar__link:hover {
+    cursor: pointer;
     color: #000;
+}
+
+.navbar__button {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center; /* Centrar icono y texto del botón */
+    justify-content: center;
+    gap: 0.5rem; /* Espacio entre la imagen y el texto */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar__button--image {
+    width: 32px;
+    height: 32px;
+}
+
+.navbar__button:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #000;
+}
+
+.navbar__button--image img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.navbar__button:hover .navbar__button--image img {
+    content: url('../img/salida.png'); /* Cambiar imagen al hacer hover */    
 }
 
 /* Header */
@@ -61,12 +95,12 @@ body {
 .header__title {
     font-size: 2rem;
     margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Categories Section */
 .categories {
-    padding: 2rem;
-    width: 100%;
+    padding: 1rem;    
     margin: 0 auto;
     text-align: center;
 }
@@ -75,6 +109,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .categories__list {
@@ -93,7 +128,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 200px;
-    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -102,10 +136,10 @@ body {
     padding: 1rem;
     margin: 0.5rem;
     transition: background-color 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .categories__item:hover {
-    transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -132,7 +166,7 @@ body {
 
 /* Categoría seleccionada */
 .categories__item.selected {
-    background-color: #007bff;
+    background-color: #444242;
     color: #fff;
 }
 
@@ -146,7 +180,7 @@ body {
 
 /* Products Section */
 .products {
-    padding: 2rem;
+    padding: 1rem;
     display: none;
     flex-direction: column;
     gap: 2rem;
@@ -154,9 +188,11 @@ body {
 }
 
 .products__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .products__list {
@@ -178,7 +214,7 @@ body {
 }
 
 .products__item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-1px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -192,7 +228,21 @@ body {
 .products__item p {
     font-size: 1rem;
     font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.products__item button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 
 /* Footer */
 .footer {

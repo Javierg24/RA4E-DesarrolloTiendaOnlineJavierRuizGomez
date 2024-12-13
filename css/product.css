@@ -9,7 +9,6 @@ body {
 /* Navbar */
 .navbar {
     background-color: #fff;
-    border-bottom: 1px solid #ddd;
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -18,24 +17,23 @@ body {
 
 .navbar__container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar__logo {
-    width: 180px;
-    height: 100px;
+    align-items: center; /* Centrar elementos verticalmente */
+    justify-content: space-between; /* Espaciar elementos horizontalmente */
 }
 
 .navbar__menu {
     display: flex;
-    gap: 2rem;
+    gap: 2rem; /* Espacio entre los elementos del menú */
+    align-items: center; /* Centrar elementos verticalmente */
 }
 
 .navbar__list {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center; /* Centrar elementos verticalmente */
+    margin: 0;
+    padding: 0;
 }
 
 .navbar__link {
@@ -47,12 +45,45 @@ body {
 }
 
 .navbar__link:hover {
+    cursor: pointer;
     color: #000;
 }
 
-.navbar__toggle {
-    display: none;
+.navbar__button {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center; /* Centrar icono y texto del botón */
+    justify-content: center;
+    gap: 0.5rem; /* Espacio entre la imagen y el texto */
+    transition: background-color 0.3s ease-in-out;
 }
+
+.navbar__button--image {
+    width: 32px;
+    height: 32px;
+}
+
+.navbar__button:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #000;
+}
+
+.navbar__button--image img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.navbar__button:hover .navbar__button--image img {
+    content: url('../img/salida.png'); /* Cambiar imagen al hacer hover */    
+}
+
 
 
 /*Titulo*/

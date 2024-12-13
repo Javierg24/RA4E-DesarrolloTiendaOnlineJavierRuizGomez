@@ -28,6 +28,12 @@ function cargarCategorias(categorias) {
         const li = document.createElement('li');
         li.classList.add('list-group-item');
         li.textContent = categoria.nombre;
+
+        // Añadir evento para redirigir a la categoría
+        li.addEventListener('click', function () {
+            seleccionarCategoria(categoria, categoria.id);
+        });
+
         categoriasList.appendChild(li);
     });
 }
@@ -39,7 +45,7 @@ function cargarProductosDestacados(productos) {
 
     const productosDestacados = productos.filter(producto => producto.destacado);
 
-    productosDestacados.forEach(producto => {
+    productosDestacados.forEach((producto, index) => {
         const card = document.createElement('div');
         card.classList.add('product-card');
         card.innerHTML = `
@@ -50,8 +56,14 @@ function cargarProductosDestacados(productos) {
                 <button class="product-card__button" data-id="${producto.id}">Ver producto</button>
             </div>
         `;
-
+        
+        // Añadir el producto a la cuadrícula
         featuredProductsGrid.appendChild(card);
+        
+        // Asegurar que la animación comience después de que el producto esté en el DOM
+        setTimeout(() => {
+            card.style.animation = `scaleIn 1.4s ease-out forwards`;
+        }, 100);  // Pequeño retraso para asegurar la animación
     });
 
     abrirProducto();
@@ -73,3 +85,9 @@ function cerrarSesion() {
     localStorage.clear(); // Limpia todo el localStorage
     window.location.href = '../html/login.html';
 }
+
+function seleccionarCategoria(categoria, index) {
+    localStorage.setItem('categoriaSeleccionada', JSON.stringify({ ...categoria, index }));
+    window.location.href = '../html/categories.html';
+}
+

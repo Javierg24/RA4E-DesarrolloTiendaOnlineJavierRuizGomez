@@ -51,7 +51,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #fff;    
+    background-color: #fff;
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -60,24 +60,23 @@ body {
 
 .navbar__container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar__logo {
-    width: 180px;
-    height: 100px;
+    align-items: center; /* Centrar elementos verticalmente */
+    justify-content: space-between; /* Espaciar elementos horizontalmente */
 }
 
 .navbar__menu {
     display: flex;
-    gap: 2rem;
+    gap: 2rem; /* Espacio entre los elementos del menú */
+    align-items: center; /* Centrar elementos verticalmente */
 }
 
 .navbar__list {
     display: flex;
     list-style: none;
     gap: 2rem;
+    align-items: center; /* Centrar elementos verticalmente */
+    margin: 0;
+    padding: 0;
 }
 
 .navbar__link {
@@ -89,23 +88,60 @@ body {
 }
 
 .navbar__link:hover {
+    cursor: pointer;
     color: #000;
 }
 
-.navbar__toggle {
-    display: none;
+.navbar__button {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center; /* Centrar icono y texto del botón */
+    justify-content: center;
+    gap: 0.5rem; /* Espacio entre la imagen y el texto */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar__button--image {
+    width: 32px;
+    height: 32px;
+}
+
+.navbar__button:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #000;
+}
+
+.navbar__button--image img {
+    width: 32px;
+    height: 32px;
+    -webkit-user-drag: none; /* Para WebKit */    
+    transition: transform 0.3s ease;
+}
+
+.navbar__button:hover .navbar__button--image img {
+    -webkit-user-drag: none; /* Para WebKit */    
+    content: url('../img/salida.png'); /* Cambiar imagen al hacer hover */    
 }
 
 .imagen__logo {
-    width: 100%;
+    width:100%;
+    height: auto;
     transition: opacity 0.5s ease;
-    -webkit-user-drag: none; /* Para WebKit */
-    user-drag: none; /* Para otros navegadores */
+    -webkit-user-drag: none; /* Para WebKit */    
 }
 
 .imagen__logo:hover {
     opacity: 0.8;
 }
+
+
+
 
 /* Main Content */
 .main-content {    
@@ -123,9 +159,10 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
     opacity: 0; /* Inicialmente invisible */
     animation: fadeIn 1s ease-out forwards;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Aplica la animación a la descripción */
@@ -136,6 +173,7 @@ body {
     opacity: 0; /* Inicialmente invisible */
     animation: fadeIn 1s ease-out forwards;
     animation-delay: 0.5s; /* Retrasa la animación para que comience después del título */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Categorías */
@@ -197,35 +235,32 @@ body {
 }
 
 /* Estilo de la cuadrícula de productos */
-.featured-products__grid > .card {
+.featured-products__grid > .product_card {
     opacity: 0; /* Inicialmente invisible */
     animation: scaleIn 0.5s ease-out forwards;
     background-color: #fff;
-    border-radius: 12px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    overflow: hidden; /* Asegura que la imagen no sobresalga de los bordes */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave en hover */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation-delay: 0.2s; /* Retraso para la animación */
 }
 
-/* Aplica animación a cada producto con retraso escalonado para el efecto */
-.featured-products__grid > .card:nth-child(1) {
+.featured-products__grid > .product_card:nth-child(1) {
     animation-delay: 0.2s;
 }
 
-.featured-products__grid > .card:nth-child(2) {
+.featured-products__grid > .product_card:nth-child(2) {
     animation-delay: 0.4s;
 }
 
-.featured-products__grid > .card:nth-child(3) {
+.featured-products__grid > .product_card:nth-child(3) {
     animation-delay: 0.6s;
 }
 
-.featured-products__grid > .card:nth-child(4) {
-    animation-delay: 0.8s;
-}
 
 /* Efecto hover: aumento y sombra */
-.featured-products__grid > .card:hover {
+.featured-products__grid > .product_card:hover {
     transform: translateY(-10px); /* Desplaza la tarjeta hacia arriba */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Aumenta la sombra para dar un efecto de elevación */
 }
@@ -283,9 +318,13 @@ body {
 }
 
 .featured-products__title {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center; /* Centrar icono y texto del botón */
+    justify-content: start;
+    font-size: 1.7rem;
     font-weight: bold;
     color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .featured-products__grid {
