@@ -56,7 +56,7 @@ function agregarAlCarrito(producto) {
         }        
         localStorage.setItem('carrito', JSON.stringify(carrito));
 
-        alert(productoEnCarrito ? 'Cantidad del producto incrementada.' : 'Producto agregado al carrito.');
+        mostrarNotificacion(productoEnCarrito ? 'Cantidad del producto incrementada.' : 'Producto agregado al carrito.');
     });
 }
 
@@ -73,6 +73,24 @@ function agregarAProductosVistos(producto) {
         localStorage.setItem(productosVistosKey, JSON.stringify(productosVistos));
     }
 }
+
+function mostrarNotificacion(mensaje) {
+    const container = document.getElementById('notification-container');
+
+    // Crear elemento de notificación
+    const notificacion = document.createElement('div');
+    notificacion.classList.add('notification');
+    notificacion.textContent = mensaje;
+
+    // Agregar notificación al contenedor
+    container.appendChild(notificacion);
+
+    // Remover la notificación después de 3 segundos
+    setTimeout(() => {
+        notificacion.remove();
+    }, 3000);
+}
+
 
 function cerrarSesion() {
     localStorage.clear(); // Limpia todo el localStorage

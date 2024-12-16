@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito - LongWay</title>
-    <link rel="stylesheet" href="../css/cart.css?v=1.0">    
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrito - LongWay</title>
+        <link rel="stylesheet" href="../css/cart.css?v=1.0">
+    </head>
 
-<body>
-    <div class="cart">
-        <nav class="navbar">
-            <div class="navbar__container">
-                <a href="dashboard.html" class="navbar__brand">
-                    <img src="../img/logo.png" alt="Logo" class="navbar__logo">
-                </a>                
-                <div class="navbar__menu">
-                    <ul class="navbar__list">
-                        <li class="navbar__item"><a href="dashboard.html" class="navbar__link">Dashboard</a></li>
-                        <li class="navbar__item"><a href="categories.html" class="navbar__link">Categorías</a></li>
-                        <li class="navbar__item"><a href="cart.html" class="navbar__link">Carrito</a></li>
-                        <li class="navbar__item">
-                            <button class="navbar__button">
-                                <div class="navbar__button--image">
-                                    <img src="../img/salida2.png" alt="Cerrar Sesión">
-                                </div>
-                                Cerrar Sesión
-                            </button>
-                        </li>
-                    </ul>
+    <body>
+        <div class="cart">
+            <nav class="navbar">
+                <div class="navbar__container">
+                    <a href="dashboard.html" class="navbar__brand">
+                        <img src="../img/logo.png" alt="Logo"
+                            class="navbar__logo">
+                    </a>
+                    <div class="navbar__menu">
+                        <ul class="navbar__list">
+                            <li class="navbar__item"><a href="dashboard.html"
+                                    class="navbar__link">Dashboard</a></li>
+                            <li class="navbar__item"><a href="categories.html"
+                                    class="navbar__link">Categorías</a></li>
+                            <li class="navbar__item">
+                                <a class="navbar__carrito--enlace"
+                                    href="cart.html">
+                                    <button class="navbar__button--carrito">
+                                        <div
+                                            class="navbar__button--image-carrito">
+                                            <img src="../img/carrito2.png"
+                                                alt="Carrito">
+                                        </div>
+
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="navbar__item">
+                                <button class="navbar__button">
+                                    <div class="navbar__button--image">
+                                        <img src="../img/salida2.png"
+                                            alt="Cerrar Sesión">
+                                    </div>
+                                    Cerrar Sesión
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="products__recently--viewed">
+                <div class="products__recently--viewed--header">
+                    <h2 class="products__recently--viewed--title">Productos
+                        Recientemente Vistos</h2>
                 </div>
             </div>
-        </nav>
 
-        <div class="products__recently--viewed">
-            <h2 class="products__recently--viewed--title">Productos Recientemente Vistos</h2>
+            <section class="cart__header">
+                <h1 class="cart__title">Carrito de Compras</h1>
+            </section>
 
+            <section class="cart__items" id="cart-items">
+                <!-- Los productos se cargarán aquí dinámicamente -->
+            </section>
+
+            <footer class="cart__footer">
+                <div class="cart__summary">
+                    <p class="cart__total" id="cart-total">Total: $0.00</p>
+                    <button class="cart__checkout-btn">Finalizar Compra</button>
+                </div>
+            </footer>
         </div>
 
-        <section class="cart__header">
-            <h1 class="cart__title">Carrito de Compras</h1>
-        </section>
-
-        <section class="cart__items" id="cart-items">
-            <!-- Los productos se cargarán aquí dinámicamente -->
-        </section>
-
-        <footer class="cart__footer">
-            <div class="cart__summary">
-                <p class="cart__total" id="cart-total">Total: $0.00</p>
-                <button class="cart__checkout-btn">Finalizar Compra</button>
-            </div>
-        </footer>
-    </div>
-
-    <script src="../js/cart.js"></script>
-</body>
+        <script src="../js/cart.js"></script>
+    </body>
 
 </html>

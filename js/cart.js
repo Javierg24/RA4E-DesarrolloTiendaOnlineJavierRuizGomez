@@ -45,8 +45,11 @@ function loadCartItems() {
 
         itemElement.innerHTML = `                    
                 <div class="cart__item-info">
-                    <h2 class="cart__item-title">${item.nombre}</h2>
-                    <p class="cart__item-price">$${item.precio}</p>
+                    <img src="${item.imagen}" alt="${item.nombre}" class="cart__item-image">
+                        <div class="cart__item-description">
+                        <h2 class="cart__item-title">${item.nombre}</h2>
+                        <p class="cart__item-price">$${item.precio}</p>
+                    </div>
                 </div>
                 <div class="cart__item-controls">
                     <button class="cart__item-btn cart__item-btn--remove" data-id="${item.id}">-</button>
@@ -118,6 +121,7 @@ function mostrarProductosVistos() {
                     <img src="${producto.imagen}" alt="${producto.nombre}" />
                     <p>${producto.nombre}</p>
                     <p>${producto.precio}</p>
+                    <button class="recent-product__button" data-id="${producto.id}">Ver producto</button>
                 </div>
             `;
             container.innerHTML += productoHTML;
@@ -125,6 +129,19 @@ function mostrarProductosVistos() {
     } else {
         container.innerHTML = '<p>No has visto ningún producto recientemente.</p>';
     }
+
+    abrirProducto();
+}
+
+
+function abrirProducto() {
+    const botones = document.querySelectorAll('.recent-product__button');
+    botones.forEach(boton => {
+        boton.addEventListener('click', function () {
+            const productId = boton.dataset.id;
+            window.location.href = `../html/product.html?id=${productId}`;
+        });
+    });
 }
 
 function cerrarSesion() {

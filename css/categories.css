@@ -3,9 +3,11 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
-    color: #333;    
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Flex layout para el body */
+    min-height: 100vh; /* Altura mínima de la ventana */
 }
-
 /* Navbar */
 .navbar {
     background-color: #fff;
@@ -13,6 +15,11 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.navbar__logo{
+    width: 70%;
+    height: auto;
 }
 
 .navbar__container {
@@ -54,6 +61,7 @@ body {
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+    border: 1px solid #000;
     cursor: pointer;
     font-size: 1rem;
     display: flex;
@@ -63,12 +71,47 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
+.navbar__button--carrito {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center; /* Centrar icono y texto del botón */
+    justify-content: center;
+    gap: 0.5rem; /* Espacio entre la imagen y el texto */
+    transition: background-color 0.3s ease-in-out;    
+}
+
+.navbar__carrito--enlace {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
 .navbar__button--image {
     width: 32px;
     height: 32px;
 }
 
+.navbar__button--image-carrito {
+    width: 32px;
+    height: 32px;
+}
+
+
 .navbar__button:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #000;
+}
+
+.navbar__button--carrito:hover {
     background-color: #ffffff;
     color: black;
     border: 1px solid #000;
@@ -77,19 +120,40 @@ body {
 .navbar__button--image img {
     width: 32px;
     height: 32px;
+    -webkit-user-drag: none; /* Para WebKit */    
+    transition: transform 0.3s ease;
+}
+
+.navbar__button--image--carrito img {
+    width: 32px;
+    height: 32px;
+    -webkit-user-drag: none; /* Para WebKit */    
     transition: transform 0.3s ease;
 }
 
 .navbar__button:hover .navbar__button--image img {
+    -webkit-user-drag: none; /* Para WebKit */    
     content: url('../img/salida.png'); /* Cambiar imagen al hacer hover */    
 }
 
+.navbar__carrito--enlace:hover .navbar__button--image-carrito img {
+    -webkit-user-drag: none; /* Para WebKit */    
+    content: url('../img/carrito.png'); /* Cambiar imagen al hacer hover */    
+}
+
 /* Header */
+
+
+.page-content {
+    flex: 1; /* Permite que el contenido principal ocupe todo el espacio disponible */
+}
+
 .header {
     background-color: #000;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    margin-bottom: 2%;
 }
 
 .header__title {
@@ -124,7 +188,7 @@ body {
 .categories__item {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 200px;
@@ -185,6 +249,7 @@ body {
     flex-direction: column;
     gap: 2rem;
     text-align: center;
+    margin-bottom: 10%;
 }
 
 .products__title {
@@ -220,7 +285,8 @@ body {
 
 .products__item img {
     max-width: 100%;
-    max-height: 120px;
+    max-height: 250px;
+    height: auto;
     object-fit: contain;
     margin-bottom: 1rem;
 }
@@ -244,6 +310,7 @@ body {
 }
 
 
+/* Footer */
 /* Footer */
 .footer {
     background-color: #000;

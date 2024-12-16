@@ -1,60 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorías</title>
-    <link rel="stylesheet" href="../css/categories.css?v=1.0">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Categorías</title>
+        <link rel="stylesheet" href="../css/categories.css?v=1.0">
+    </head>
 
-<body>
-    <nav class="navbar">
-        <div class="navbar__container">
-            <a href="dashboard.html" class="navbar__brand">
-                <img src="../img/logo.png" alt="Logo" class="navbar__logo">
-            </a>            
-            <div class="navbar__menu">
-                <ul class="navbar__list">
-                    <li class="navbar__item"><a href="dashboard.html" class="navbar__link">Dashboard</a></li>
-                    <li class="navbar__item"><a href="categories.html" class="navbar__link">Categorías</a></li>
-                    <li class="navbar__item"><a href="cart.html" class="navbar__link">Carrito</a></li>
-                    <li class="navbar__item">
-                        <button class="navbar__button">
-                            <div class="navbar__button--image">
-                                <img src="../img/salida2.png" alt="Cerrar Sesión">
-                            </div>
-                            Cerrar Sesión
-                        </button>
-                    </li>
+    <body>
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="dashboard.html" class="navbar__brand">
+                    <img src="../img/logo.png" alt="Logo" class="navbar__logo">
+                </a>
+                <div class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li class="navbar__item"><a href="dashboard.html"
+                                class="navbar__link">Dashboard</a></li>
+                        <li class="navbar__item"><a href="categories.html"
+                                class="navbar__link">Categorías</a></li>
+                        <li class="navbar__item">
+                            <a class= "navbar__carrito--enlace" href="cart.html">
+                                <button class="navbar__button--carrito">
+                                    <div class="navbar__button--image-carrito">
+                                        <img src="../img/carrito2.png"
+                                            alt="Carrito">
+                                    </div>
+                                    
+                                </button>
+                            </a>
+                        </li>
+                        <li class="navbar__item">
+                            <button class="navbar__button">
+                                <div class="navbar__button--image">
+                                    <img src="../img/salida2.png"
+                                        alt="Cerrar Sesión">
+                                </div>
+                                Cerrar Sesión
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="page-content">
+
+            <header class="header">
+                <h1 class="header__title">CATEGORÍAS</h1>
+            </header>
+
+            <div class="categories">
+                <ul class="categories__list" id="categories__list">
+
                 </ul>
             </div>
+
+            <div class="products">
+                <h2 class="products__title"></h2>
+                <div class="products__list">
+                    <!-- Los productos se agregarán dinámicamente en función de la categoría seleccionada -->
+                </div>
+            </div>
+
         </div>
-    </nav>
+        <footer class="footer">
+            <div class="footer__container">
+                <p class="footer__text">&copy; 2024 LongWay. Todos los derechos
+                    reservados.
+                </p>
+                <div class="footer__links">
+                    <a href="#" class="footer__link">Política de privacidad</a>
+                    <span class="footer__separator">|</span>
+                    <a href="#" class="footer__link">Términos y condiciones</a>
+                </div>
+            </div>
+        </footer>
 
-    <header class="header">
-        <h1 class="header__title">CATEGORÍAS</h1>
-    </header>
+        <script src="../js/categories.js"></script>
 
-    <div class="categories">
-        <ul class="categories__list" id="categories__list">
-             
-        </ul>
-    </div>
-
-    <div class="products">
-        <h2 class="products__title"></h2>
-        <div class="products__list">
-            <!-- Los productos se agregarán dinámicamente en función de la categoría seleccionada -->
-        </div>
-    </div>
-
-    <footer class="footer">
-        <p class="footer__text">&copy; 2024 LongWay. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="../js/categories.js"></script>
-
-</body>
+    </body>
 
 </html>

@@ -9,38 +9,33 @@
 </head>
 
 <body class="page page__login">
-    <div class="login">
-        <div class="login__card">
-            <h3 class="login__title">Inicio Sesión</h3>
-            <form class="login__form" onsubmit="login(event)" action="../php/login.php" method="post">
+    <div class="login-container">        
+        <div class="login-container__left">
+            <h3 class="login__title">Sign in</h3>
+            <div class="login__social">
+                <button class="login__social-btn">f</button>
+                <button class="login__social-btn">G+</button>
+                <button class="login__social-btn">in</button>
+            </div>
+            <p class="login__subtitle">or use your account</p>
+            <form class="login__form" onsubmit="login(event)" action="../php/procesar.php" method="post">
                 <div class="login__field">
-                    <label for="username" class="login__label">Nombre de usuario</label>
-                    <input type="text" class="login__input" id="username" name="username"
-                        placeholder="Introduce tu usuario" required>
+                    <input type="username" class="login__input" id="username" name="username" placeholder="Username" required>                    
                 </div>
                 <div class="login__field">
-                    <label for="password" class="login__label">Contraseña</label>
-                    <input type="password" class="login__input" id="password" name="password"
-                        placeholder="Introduce tu contraseña" required>
+                    <input type="password" class="login__input" id="password" name="password" placeholder="Password" required>                    
                 </div>
-                <button type="submit" class="login__button">Entrar</button>
-                <p class="login__register">
-                    ¿No tienes cuenta? 
-                    <a href="#" class="login__link">Regístrate aquí</a>
-                </p>
+                <a href="#" class="login__forgot">Forgot your password?</a>
+                <button type="submit" class="login__button">SIGN IN</button>                
             </form>
         </div>
-    </div>
-    <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">&copy; 2024 LongWay. Todos los derechos reservados.</p>
-            <div class="footer__links">
-                <a href="#" class="footer__link">Política de privacidad</a>
-                <span class="footer__separator">|</span>
-                <a href="#" class="footer__link">Términos y condiciones</a>
-            </div>
+
+        <!-- Sección derecha -->
+        <div class="login-container__right">
+            <h2 class="login-container__title">LongWay</h2>
+            <p class="login-container__text">Enter your personal details and start the journey with us.</p>            
         </div>
-    </footer>
+    </div>
     <script src="../js/login.js"></script>
 </body>
 
