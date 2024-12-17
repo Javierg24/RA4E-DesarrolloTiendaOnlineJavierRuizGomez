@@ -147,17 +147,17 @@ body {
 /* Products Recently Viewed Section */
 
 .products__recently--viewed {
-    background-color: #fff;
-    padding: 2rem;  
+    width: 100%;
+    background-color: #fff;        
 }
 
 .products__recently--viewed--header{
-    background-color: #000;
+    background-color: #1f1c1c;
     width: 100%;
     color: #fff;
     padding: 1rem;
     text-align: center;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
 
 .products__recently--viewed--title {
@@ -165,22 +165,30 @@ body {
     font-size: 1.5rem;
 }
 
+.products__recently--viewed--container{    
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2%;
+}
+
 .recent-product {
     display: inline-block;
-    width: calc(25% - 1rem);
+    margin-left: 2%;
+    width: calc(20% - 2rem);
     margin-right: 1rem;
     margin-bottom: 1rem;
     text-align: center;
     background-color: #ffffff;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
 
 .recent-product img {
-    width: 50%;
+    width: 30%;
     height: auto;
+    -webkit-user-drag: none; /* Para WebKit */  
 }
 
 .recent-product p {
@@ -196,7 +204,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.8rem;
     gap: 0.5rem;
     transition: background-color 0.3s ease-in-out;
 }
@@ -261,6 +269,7 @@ body {
     border-radius: 8px;
     object-fit: cover;
     margin-right: 1rem;
+    -webkit-user-drag: none; /* Para WebKit */  
 }
 
 .cart__item-info {

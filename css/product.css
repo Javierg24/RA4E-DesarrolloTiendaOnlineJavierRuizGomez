@@ -227,6 +227,7 @@ body {
     width: 300px;
     height: auto;
     border-radius: 8px;
+    -webkit-user-drag: none; /* Para WebKit */  
 }
 
 .product-detail__info {

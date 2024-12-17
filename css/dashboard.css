@@ -326,6 +326,7 @@ body {
     width: 100%; /* Asegura que la imagen ocupe todo el espacio */
     height: auto;
     object-fit: cover; /* Mantiene la proporción y recorta la imagen si es necesario */
+    -webkit-user-drag: none; /* Para WebKit */  
 }
 
 /* Estilos del contenido dentro de la tarjeta */
@@ -409,6 +410,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
+    -webkit-user-drag: none; /* Para WebKit */  
 }
 
 /* Información del producto (título, precio, etc.) */
@@ -428,7 +430,7 @@ body {
 /* Precio del producto */
 .product-card__price {
     font-size: 1rem;
-    color: #777;
+    color: #272525;
     margin-bottom: 1rem;
 }
 

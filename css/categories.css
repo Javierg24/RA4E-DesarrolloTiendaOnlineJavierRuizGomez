@@ -221,12 +221,6 @@ body {
     color: #8a5151;
 }
 
-.categories__item img {
-    max-width: 100%;
-    max-height: 120px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-}
 
 /* Categoría seleccionada */
 .categories__item.selected {
@@ -289,6 +283,7 @@ body {
     height: auto;
     object-fit: contain;
     margin-bottom: 1rem;
+    -webkit-user-drag: none; /* Para WebKit */  
 }
 
 .products__item p {

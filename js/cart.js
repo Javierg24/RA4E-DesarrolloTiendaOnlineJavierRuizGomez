@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    const token = localStorage.getItem('token');
+    if (!token){
+        alert('No estas logueado');
+        cerrarSesion();
+    }
     const botonFinalizarCompra = document.getElementsByClassName('cart__checkout-btn')[0];
 
     botonFinalizarCompra.addEventListener('click', function () {
@@ -28,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
     botonCerrarSesion.addEventListener('click', cerrarSesion);
+
 });
 
 // Función para cargar los productos del carrito
@@ -85,13 +92,9 @@ function handleQuantityChange(event) {
     loadCartItems();
 }
 
-/**
- * Valida el carrito enviándolo al servidor.
- * @param {Array} carrito - Array de objetos que representan los productos en el carrito.
- * @returns {Promise} - Resolución con el estado y datos de la validación.
- */
+// Función para validar el carrito
 function validarCarrito(carrito) {
-    return fetch('../php/procesar.php', { // Cambiamos la ruta al endpoint actualizado
+    return fetch('../php/procesar.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -113,7 +116,7 @@ function validarCarrito(carrito) {
 // Función para mostrar los productos vistos recientemente
 function mostrarProductosVistos() {
     const productosVistos = JSON.parse(localStorage.getItem('productosVistos')) || [];
-    const container = document.getElementsByClassName('products__recently--viewed')[0];
+    const container = document.getElementsByClassName('products__recently--viewed--container')[0];
     if (productosVistos.length > 0) {
         productosVistos.slice(-4).reverse().forEach(producto => {
             const productoHTML = `
@@ -132,7 +135,6 @@ function mostrarProductosVistos() {
 
     abrirProducto();
 }
-
 
 function abrirProducto() {
     const botones = document.querySelectorAll('.recent-product__button');

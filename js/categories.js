@@ -1,5 +1,11 @@
 // Evento principal al cargar el DOM
 document.addEventListener('DOMContentLoaded', function () {
+
+    const token = localStorage.getItem('token');
+    if (!token){
+        alert('No estas logueado');
+        cerrarSesion();
+    }
     // Verificar si los datos están en localStorage
     const tiendaData = localStorage.getItem('infoTienda');
 
@@ -18,9 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Mostrar los productos automáticamente
             mostrarProductos(categoria);
-
-            // Resaltar la categoría seleccionada
-            categoriaElement.classList.add('selected');
+                        
 
             // Limpiar la selección para evitar persistencia innecesaria
             localStorage.removeItem('categoriaSeleccionada');
@@ -32,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
     botonCerrarSesion.addEventListener('click', cerrarSesion);
+    
 });
 
 // Método para cargar las categorías en el DOM
@@ -123,3 +128,4 @@ function cerrarSesion() {
     localStorage.clear(); // Limpia todo el localStorage
     window.location.href = '../html/login.html';
 }
+

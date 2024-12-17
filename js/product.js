@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', async function () {
+
+    const token = localStorage.getItem('token');
+    if (!token){
+        alert('No estas logueado');
+        cerrarSesion();
+    }
+
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id'); // Obtener el ID del producto desde la URL
 
@@ -25,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
     botonCerrarSesion.addEventListener('click', cerrarSesion);
+    
 });
 
 function mostrarProducto(producto) {
@@ -46,14 +54,14 @@ function agregarAlCarrito(producto) {
     const botonAgregar = document.querySelector('.product-add__cart');
 
     botonAgregar.addEventListener('click', function () {
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];        
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         const productoEnCarrito = carrito.find(item => item.id === producto.id);
-        if (productoEnCarrito) {            
+        if (productoEnCarrito) {
             productoEnCarrito.cantidad += 1;
-        } else {            
+        } else {
             const productoConCantidad = { ...producto, cantidad: 1 };
             carrito.push(productoConCantidad);
-        }        
+        }
         localStorage.setItem('carrito', JSON.stringify(carrito));
 
         mostrarNotificacion(productoEnCarrito ? 'Cantidad del producto incrementada.' : 'Producto agregado al carrito.');
@@ -66,7 +74,7 @@ function agregarAProductosVistos(producto) {
     let productosVistos = JSON.parse(localStorage.getItem(productosVistosKey)) || [];
     const productoYaVisto = productosVistos.find(item => item.id === producto.id);
     if (!productoYaVisto) {
-        productosVistos.push(producto); 
+        productosVistos.push(producto);
         if (productosVistos.length > 4) {
             productosVistos = productosVistos.slice(-4);
         }
@@ -104,3 +112,7 @@ function mostrarError(mensaje) {
         <p class="error-message">${mensaje}</p>
     `;
 }
+
+
+
+

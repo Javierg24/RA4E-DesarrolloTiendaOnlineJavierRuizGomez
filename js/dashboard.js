@@ -1,6 +1,12 @@
 // Evento principal al cargar el DOM
 document.addEventListener('DOMContentLoaded', function () {
     // Verificar si los datos están en localStorage
+
+    const token = localStorage.getItem('token');
+    if (!token){
+        alert('No estas logueado');
+        cerrarSesion();
+    }
     const tiendaData = localStorage.getItem('infoTienda');
 
     if (tiendaData) {
@@ -16,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
-    botonCerrarSesion.addEventListener('click', cerrarSesion);    
+    botonCerrarSesion.addEventListener('click', cerrarSesion);   
+    
 });
 
 // Método para cargar las categorías en el DOM
