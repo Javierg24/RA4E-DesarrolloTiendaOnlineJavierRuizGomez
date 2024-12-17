@@ -87,6 +87,14 @@ function abrirProducto() {
     });
 }
 
+function cartAmount() {
+    const cartAmount = document.getElementsByClassName('cart__amount')[0];
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart) {
+        cartAmount.textContent = cart.length;
+    }
+}
+
 
 function cerrarSesion() {
     localStorage.clear(); // Limpia todo el localStorage

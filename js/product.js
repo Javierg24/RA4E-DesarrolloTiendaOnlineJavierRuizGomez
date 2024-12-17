@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function () {
-
     const token = localStorage.getItem('token');
-    if (!token){
-        alert('No estas logueado');
+    if (!token) {
+        alert('No estás logueado');
         cerrarSesion();
     }
 
@@ -32,7 +31,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
     botonCerrarSesion.addEventListener('click', cerrarSesion);
-    
+
+    // Inicializar la cantidad del carrito al cargar la página
+    actualizarCantidadCarrito();
 });
 
 function mostrarProducto(producto) {
@@ -65,7 +66,18 @@ function agregarAlCarrito(producto) {
         localStorage.setItem('carrito', JSON.stringify(carrito));
 
         mostrarNotificacion(productoEnCarrito ? 'Cantidad del producto incrementada.' : 'Producto agregado al carrito.');
+
+        // Actualiza la cantidad de productos en el carrito
+        actualizarCantidadCarrito();
     });
+}
+
+// Función para actualizar la cantidad de productos en el carrito
+function actualizarCantidadCarrito() {
+    const cartAmountElement = document.getElementById('cart__amount');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalCantidad = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    cartAmountElement.textContent = totalCantidad;
 }
 
 // Función para agregar el producto a la lista de "productos recientemente vistos"
@@ -99,7 +111,6 @@ function mostrarNotificacion(mensaje) {
     }, 3000);
 }
 
-
 function cerrarSesion() {
     localStorage.clear(); // Limpia todo el localStorage
     window.location.href = '../html/login.html';
@@ -112,7 +123,3 @@ function mostrarError(mensaje) {
         <p class="error-message">${mensaje}</p>
     `;
 }
-
-
-
-
