@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cerrarSesion();
     }
     const tiendaData = localStorage.getItem('infoTienda');
+    actualizarCantidadCarrito();
 
     if (tiendaData) {
         console.log('Cargando datos desde localStorage');
@@ -95,6 +96,13 @@ function cartAmount() {
     }
 }
 
+
+function actualizarCantidadCarrito() {
+    const cartAmountElement = document.getElementById('cart__amount');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalCantidad = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    cartAmountElement.textContent = totalCantidad;
+}
 
 function cerrarSesion() {
     localStorage.clear(); // Limpia todo el localStorage

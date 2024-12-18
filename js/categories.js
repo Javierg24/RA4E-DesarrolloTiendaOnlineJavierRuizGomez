@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Verificar si los datos están en localStorage
     const tiendaData = localStorage.getItem('infoTienda');
 
+    actualizarCantidadCarrito();
+
     if (tiendaData) {
         console.log('Cargando datos desde localStorage');
         const data = JSON.parse(tiendaData);
@@ -122,6 +124,14 @@ function abrirProducto() {
             window.location.href = `../html/product.html?id=${productId}`;
         });
     });
+}
+
+
+function actualizarCantidadCarrito() {
+    const cartAmountElement = document.getElementById('cart__amount');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalCantidad = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    cartAmountElement.textContent = totalCantidad;
 }
 
 function cerrarSesion() {

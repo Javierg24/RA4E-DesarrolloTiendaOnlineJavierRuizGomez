@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             handleQuantityChange(event); // Llamar a la función para actualizar la cantidad
         }
     });
+    actualizarCantidadCarrito();
 
     const botonCerrarSesion = document.getElementsByClassName('navbar__button')[0];
     botonCerrarSesion.addEventListener('click', cerrarSesion);
@@ -144,6 +145,13 @@ function abrirProducto() {
             window.location.href = `../html/product.html?id=${productId}`;
         });
     });
+}
+
+function actualizarCantidadCarrito() {
+    const cartAmountElement = document.getElementById('cart__amount');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalCantidad = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    cartAmountElement.textContent = totalCantidad;
 }
 
 function cerrarSesion() {

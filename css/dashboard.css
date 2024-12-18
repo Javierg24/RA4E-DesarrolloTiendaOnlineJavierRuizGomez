@@ -65,14 +65,19 @@ body {
 
 .navbar__container {
     display: flex;
-    align-items: center; /* Centrar elementos verticalmente */
-    justify-content: space-between; /* Espaciar elementos horizontalmente */
+    align-items: center; /* Alineación vertical consistente */
+    justify-content: space-between; /* Espacio entre elementos */
 }
-
 .navbar__menu {
     display: flex;
-    gap: 2rem; /* Espacio entre los elementos del menú */
-    align-items: center; /* Centrar elementos verticalmente */
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 2rem; /* Espacio entre elementos */
+}
+
+.navbar__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar__list {
@@ -80,6 +85,7 @@ body {
     list-style: none;
     gap: 2rem;
     align-items: center; /* Centrar elementos verticalmente */
+    justify-content: start; /* Centrar elementos horizontalmente */
     margin: 0;
     padding: 0;
 }
@@ -112,19 +118,34 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
+#cart__amount {
+    position: relative; /* Para posicionarlo sobre el carrito */
+    top: -17px; /* Ajusta la posición vertical encima del carrito */
+    right: 2px; /* Ajusta la posición horizontal al lado del carrito */
+    width: 20px; /* Ancho del círculo */
+    height: 20px; /* Altura del círculo */
+    background-color: rgb(156, 40, 40); /* Color de fondo del círculo */
+    color: #fff; /* Color del texto */
+    border-radius: 50%; /* Forma de círculo */
+    display: flex; /* Centrar contenido */
+    align-items: center; /* Centrar contenido verticalmente */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    font-size: 0.8rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita para destacar el número */
+    border: 2px solid #fff; /* Borde blanco para resaltar */
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
 .navbar__button--carrito {
-    background-color: #000;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #000;
-    cursor: pointer;
-    font-size: 1rem;
+    width: fit-content;
+    position: relative; /* Necesario para posicionar el cart__amount */
     display: flex;
-    align-items: center; /* Centrar icono y texto del botón */
-    justify-content: center;
-    gap: 0.5rem; /* Espacio entre la imagen y el texto */
-    transition: background-color 0.3s ease-in-out;    
+    align-items: center;
+    justify-content: center;    
+    border:none;
+    background: none;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .navbar__carrito--enlace {
@@ -155,7 +176,6 @@ body {
 .navbar__button--carrito:hover {
     background-color: #ffffff;
     color: black;
-    border: 1px solid #000;
 }
 
 .navbar__button--image img {
@@ -175,11 +195,6 @@ body {
 .navbar__button:hover .navbar__button--image img {
     -webkit-user-drag: none; /* Para WebKit */    
     content: url('../img/salida.png'); /* Cambiar imagen al hacer hover */    
-}
-
-.navbar__carrito--enlace:hover .navbar__button--image-carrito img {
-    -webkit-user-drag: none; /* Para WebKit */    
-    content: url('../img/carrito.png'); /* Cambiar imagen al hacer hover */    
 }
 
 

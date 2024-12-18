@@ -10,45 +10,44 @@
     </head>
 
     <body>
-        <div class="cart">
-            <nav class="navbar">
-                <div class="navbar__container">
-                    <a href="dashboard.html" class="navbar__brand">
-                        <img src="../img/logo.png" alt="Logo"
-                            class="navbar__logo">
-                    </a>
-                    <div class="navbar__menu">
-                        <ul class="navbar__list">
-                            <li class="navbar__item"><a href="dashboard.html"
-                                    class="navbar__link">Dashboard</a></li>
-                            <li class="navbar__item"><a href="categories.html"
-                                    class="navbar__link">Categorías</a></li>
-                            <li class="navbar__item">
-                                <a class="navbar__carrito--enlace"
-                                    href="cart.html">
-                                    <button class="navbar__button--carrito">
-                                        <div
-                                            class="navbar__button--image-carrito">
-                                            <img src="../img/carrito2.png"
-                                                alt="Carrito">
-                                        </div>
-                                    </button>
-                                </a>
-                            </li>
-                            <li class="navbar__item">
-                                <button class="navbar__button">
-                                    <div class="navbar__button--image">
-                                        <img src="../img/salida2.png"
-                                            alt="Cerrar Sesión">
-                                    </div>
-                                    Cerrar Sesión
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="dashboard.html" class="navbar__brand">
+                    <img src="../img/logo.png" alt="Logo" class="navbar__logo">
+                </a>
+                <div class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li class="navbar__item"><a href="dashboard.html"
+                                class="navbar__link">Dashboard</a></li>
+                        <li class="navbar__item"><a href="categories.html"
+                                class="navbar__link">Categorías</a></li>
+                        <li class="navbar__item">                            
+                            <a class= "navbar__carrito--enlace" href="cart.html">                                
+                                <button class="navbar__button--carrito">
+                                    <div class="navbar__button--image-carrito">
+                                        <img src="../img/carrito.png"
+                                            alt="Carrito">
+                                    </div>         
+                                    <p id="cart__amount"> </p>                            
+                                </button>  
+                                                            
+                            </a>
+                        </li>
+                        <li class="navbar__item">
+                            <button class="navbar__button">
+                                <div class="navbar__button--image">
+                                    <img src="../img/salida2.png"
+                                        alt="Cerrar Sesión">
+                                </div>
+                                Cerrar Sesión
+                            </button>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
 
+        <div class="page-content">
             <div class="products__recently--viewed">
                 <div class="products__recently--viewed--header">
                     <h2 class="products__recently--viewed--title">Productos Recientemente Vistos</h2>
@@ -72,8 +71,7 @@
                     <button class="cart__checkout-btn">Finalizar Compra</button>
                 </div>
             </footer>
-        </div>
-
+        </div>    
         <script src="../js/cart.js"></script>
     </body>
 
